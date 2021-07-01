@@ -49,7 +49,7 @@ public class TestSteps {
 
     @Then("Сheck that the product is {string}")
     public void quantityIsCorrect(String quantity) {
-        Selenide.$(By.xpath("//input[@class='g-form__text j-basket__counter']")).shouldHave(Condition.value(quantity));//Проверяем, что товар в корзине 1
+        Selenide.element(basketPage.getQuantityProduct()).shouldHave(Condition.value(quantity));//Проверяем, что товар в корзине 1
     }
 }
 
