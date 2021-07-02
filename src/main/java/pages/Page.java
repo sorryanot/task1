@@ -1,6 +1,6 @@
 package pages;
 
-public abstract class Parameters {
+public abstract class Page {
     private String nameProduct;
     private String costProduct;
 
@@ -12,9 +12,7 @@ public abstract class Parameters {
         this.costProduct = costProduct;
     }
 
-    public String getNameProduct() {
-        return nameProduct;
-    }
+    public String getNameProduct() { return nameProduct; }
 
     public String getCostProduct() {
         return costProduct;

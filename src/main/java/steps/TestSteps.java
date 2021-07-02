@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import pages.BasketPage;
 import pages.MainPage;
 
@@ -17,12 +16,12 @@ public class TestSteps {
     BasketPage basketPage = new BasketPage();
 
     @Given("Open main page")
-    public void iGoToMainPage() {
+    public void goToMainPage() {
         mainPage.open();
     }
 
     @When("Find product {string} and add in the Basket")
-    public void iAddProductInShoppingBasket(String nameProduct) {
+    public void findProductAndAddToBasket(String nameProduct) {
         mainPage.inputName(nameProduct);
         mainPage.addInBasket();
         mainPage.searchName(nameProduct);
@@ -30,7 +29,7 @@ public class TestSteps {
     }
 
     @When("Go to Basket page")
-    public void iGoToShoppingBasketPage() {
+    public void goToBasketPage() {
         basketPage.goToBasket();
 
     }
@@ -38,7 +37,7 @@ public class TestSteps {
     @Then("Check that the name product {string} is correct")
     public void nameIsCorrect(String nameProduct) {
         basketPage.searchName(nameProduct);
-        Assert.assertEquals("Product name does not match", basketPage.getNameProduct(), mainPage.getNameProduct());//Проверяем совпадение названия товара
+        Assert.assertEquals("Product name does not match", basketPage.getNameProduct(), nameProduct);//Проверяем совпадение названия товара
     }
 
     @Then("Checking the cost of the product")

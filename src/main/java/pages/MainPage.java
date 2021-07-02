@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
-public class MainPage extends Parameters {
+public class MainPage extends Page {
     private String URL = "https://www.21vek.by/";
     private By input = By.xpath("//input[@id='j-search']");
     private By clickBasket = By.xpath("//button[text()='В корзину']");
@@ -26,7 +26,8 @@ public class MainPage extends Parameters {
     public void searchName(String productName) {
         setNameProduct(productName);//сохряняем название продукта
     }
-    public void searchCost(){
+
+    public void searchCost() {
         setCostProduct(Selenide.element(findCostProduct).getText());//находим и сохряняем цену продукта
     }
 }

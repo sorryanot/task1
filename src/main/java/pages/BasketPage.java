@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 
-public class BasketPage extends Parameters {
+public class BasketPage extends Page {
 
     private By basket = By.xpath("//span[text()='Корзина']");
     private By findCostProduct = By.xpath("//span[@class='j-basket__cost']");
